@@ -1,6 +1,6 @@
 import Employee from "./Employee.js";
 
-export class Intern extends Employee {
+export default class Intern extends Employee {
     constructor(name, id, email, school) {
         super(name, id, email)
         this.school = school

@@ -1,4 +1,4 @@
-class Employee {
+export default class Employee {
     constructor(name, id, email) {
         this.name = name
         this.id = id
@@ -22,5 +22,3 @@ class Employee {
         return this.role
     }
 }
-
-module.exports = Employee;
