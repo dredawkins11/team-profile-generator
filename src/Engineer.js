@@ -1,6 +1,6 @@
-import Employee from "./Employee.js";
+const Employee = require("./Employee")
 
-export default class Engineer extends Employee {
+class Engineer extends Employee {
     constructor(name, id, email, github) {
         super(name, id, email)
         this.github = github;
@@ -12,3 +12,5 @@ export default class Engineer extends Employee {
         return this.github
     }
 }
+
+module.exports = Engineer

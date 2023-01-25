@@ -1,6 +1,6 @@
-import { JSDOM } from "jsdom";
+const {JSDOM} = require("jsdom")
 
-export async function genrerateTeam(team) {
+async function generateTeam(team) {
     const dom = await JSDOM.fromFile(`./src/default.html`);
     const document = dom.window.document;
     const main = dom.window.document.querySelector("main");
@@ -89,3 +89,5 @@ export async function genrerateTeam(team) {
     console.log(dom.serialize());
     return dom.serialize();
 }
+
+module.exports.generateTeam = generateTeam

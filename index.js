@@ -1,10 +1,11 @@
 // Load dependencies and classes
-import inquirer from "inquirer";
-import fs from "fs"
-import Intern from "./src/Intern.js";
-import Engineer from "./src/Engineer.js";
-import Manager from "./src/Manager.js";
-import { genrerateTeam } from "./src/generator.js";
+const inquirer = require("inquirer");
+const fs = require("fs");
+
+const Intern = require("./src/Intern");
+const Engineer = require("./src/Engineer");
+const Manager = require("./src/Manager");
+const { generateTeam } = require("./src/generator");
 
 const rolePrompt = [
     {
@@ -119,8 +120,8 @@ async function collectInput() {
 async function init() {
     try {
         const team = await collectInput();
-        const htmlString = await genrerateTeam(team);
-        fs.writeFileSync("./dist/index.html", htmlString)
+        const htmlString = await generateTeam(team);
+        fs.writeFileSync("./dist/index.html", htmlString);
         console.log(htmlString);
     } catch (error) {
         console.log(error);

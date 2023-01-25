@@ -1,6 +1,6 @@
-import Employee from "./Employee.js";
+const Employee = require("./Employee")
 
-export default class Intern extends Employee {
+class Intern extends Employee {
     constructor(name, id, email, school) {
         super(name, id, email)
         this.school = school
@@ -12,3 +12,5 @@ export default class Intern extends Employee {
         return this.school
     }
 }
+
+module.exports = Intern
