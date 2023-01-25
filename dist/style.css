@@ -1,0 +1,84 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: hsl(213, 10%, 10%);
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+}
+
+body > header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
+    width: 100%;
+    font-size: 3rem;
+    color: whitesmoke;
+}
+
+main {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 50px;
+    width: 70%;
+    margin: auto;
+    justify-content: center;
+    color: white;
+}
+
+h1, h3 {
+    margin: 0;
+}
+
+hr {
+    width: 100%;
+}
+
+.employee-container {
+    flex-basis: 300px;
+    /* max-width: 30%; */
+    background-color: hsl(213, 10%, 40%);
+    border: 5px solid hsl(213, 10%, 70%);
+    box-shadow: 0 0 30px 5px hsl(213, 10%, 5%);
+    transition: all .2s ease;
+}
+
+.employee-container:hover {
+    transform: scale(1.05);
+}
+
+.employee-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: hsl(213, 10%, 70%);
+    color: hsl(213, 9%, 10%);
+}
+
+.employee-details {
+    padding: 1rem;
+    background-color: hsl(213, 10%, 25%);
+}
+
+.employee-details div {
+    display: flex;
+    flex-flow: column;
+}
+
+.employee-details div p {
+    font-weight: bolder;
+    width: 100%;
+    display:  flex;
+    justify-content: space-between;
+}
+
+.employee-details div p span {
+    font-weight: normal;
+}
+
+a:visited {
+    color: unset;
+}
