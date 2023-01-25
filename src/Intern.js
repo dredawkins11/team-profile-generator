@@ -5,6 +5,7 @@ export default class Intern extends Employee {
         super(name, id, email)
         this.school = school
         this.role = "Intern"
+        this.icon = "fa-book"
     }
 
     getSchool() {

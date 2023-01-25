@@ -4,6 +4,7 @@ export default class Employee {
         this.id = id
         this.email = email
         this.role = "Employee"
+        this.icon = "fa-user"
     }
 
     getName() {
@@ -20,5 +21,9 @@ export default class Employee {
 
     getRole() {
         return this.role
+    }
+
+    getIcon() {
+        return this.icon
     }
 }

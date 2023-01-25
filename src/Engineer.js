@@ -5,6 +5,7 @@ export default class Engineer extends Employee {
         super(name, id, email)
         this.github = github;
         this.role = "Engineer"
+        this.icon = "fa-microchip"
     }
 
     getGithub() {

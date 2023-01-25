@@ -5,6 +5,7 @@ export default class Manager extends Employee {
         super(name, id, email)
         this.officeNumber = officeNumber
         this.role = "Manager"
+        this.icon = "fa-user-tie"
     }
 
     getOfficeNumber() {
