@@ -1,12 +1,12 @@
 // Load dependencies and classes
 const inquirer = require("inquirer");
 const fs = require("fs");
-
 const Intern = require("./src/Intern");
 const Engineer = require("./src/Engineer");
 const Manager = require("./src/Manager");
 const { generateTeam } = require("./src/generator");
 
+// Create prompts for use with Inquirer
 const rolePrompt = [
     {
         name: "role",
@@ -53,6 +53,7 @@ const specificPrompts = [
     },
 ];
 
+// Collect user input and create various employee objects
 async function collectInput() {
     const team = [];
 
@@ -117,12 +118,17 @@ async function collectInput() {
     return team;
 }
 
+
 async function init() {
     try {
+        // Store array of team members
         const team = await collectInput();
+
+        // Pass team array to generator function to generate HTML
         const htmlString = await generateTeam(team);
+
+        // Write to the index.html file in the dist folder
         fs.writeFileSync("./dist/index.html", htmlString);
-        console.log(htmlString);
     } catch (error) {
         console.log(error);
     }

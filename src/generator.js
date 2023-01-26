@@ -1,10 +1,14 @@
+// Using the JSDOM library for its replication of the browser DOM API. This makes it easier to create HTMl, since I don't have to work with only strings.
 const {JSDOM} = require("jsdom")
 
+// Takes in an array of various employee types and outputs HTML containing their data
 async function generateTeam(team) {
+    // Inialize the DOM and create document object and the main element
     const dom = await JSDOM.fromFile(`./src/default.html`);
     const document = dom.window.document;
     const main = dom.window.document.querySelector("main");
 
+    // Loop over team array to make a card for each employee
     team.forEach((employee) => {
         // Create container to hold all the employee data
         const employeeContainer = document.createElement("div");
@@ -86,7 +90,7 @@ async function generateTeam(team) {
         main.appendChild(employeeContainer);
     });
 
-    console.log(dom.serialize());
+    // Return seriallized DOM
     return dom.serialize();
 }
 
